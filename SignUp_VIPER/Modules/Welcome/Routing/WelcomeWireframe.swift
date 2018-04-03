@@ -9,26 +9,17 @@
 import UIKit
 
 class WelcomeWireframe: WelcomeWireframeProtocol {
-    
-    var window: UIWindow
-    var navigationVC: UINavigationController
-    
-    init(window: UIWindow, navigationVC: UINavigationController) {
-        self.window = window
-        self.navigationVC = navigationVC
+    var rootWireframe : RootWireframe?
+    var welcomeViewController = WelcomeViewController.nibInstance
+
+    func presentWelcomeScreenInWindow(_ window: UIWindow) {
+        self.rootWireframe?.showRootViewController(self.welcomeViewController, inWindow: window)
     }
     
-    func presentWelcomeViewControllerInWindow() {
-        let welcomeVC = WelcomeViewController.nibInstance
-        self.navigationVC.viewControllers = [welcomeVC]
-        self.window.rootViewController = navigationVC
-        self.window.makeKeyAndVisible()
+    func presentLoginScreen() {
     }
     
-    func presentLoginViewController() {
-    }
-    
-    func presentSignupViewController() {
+    func presentSignupScreen() {
     }
     
 }

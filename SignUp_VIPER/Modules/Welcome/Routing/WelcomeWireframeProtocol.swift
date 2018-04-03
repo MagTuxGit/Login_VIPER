@@ -6,10 +6,10 @@
 //  Copyright © 2018 Trand. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol WelcomeWireframeProtocol {
-    func presentWelcomeViewControllerInWindow()
-    func presentLoginViewController()
-    func presentSignupViewController()
+    func presentWelcomeScreenInWindow(_ window: UIWindow)
+    func presentLoginScreen()
+    func presentSignupScreen()
 }

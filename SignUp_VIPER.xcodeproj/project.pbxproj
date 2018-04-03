@@ -19,6 +19,7 @@
 		872C2DFB20738C9D0049277E /* WelcomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C2DF920738C9D0049277E /* WelcomeWireframe.swift */; };
 		872C2DFC20738C9D0049277E /* WelcomeWireframeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C2DFA20738C9D0049277E /* WelcomeWireframeProtocol.swift */; };
 		872C2DFE20738DC10049277E /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 872C2DFD20738DC10049277E /* WelcomeViewController.xib */; };
+		872C2E0420739C340049277E /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C2E0320739C340049277E /* NibLoadable.swift */; };
 		87DAEAB92072641A00D1BF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DAEAB82072641A00D1BF38 /* AppDelegate.swift */; };
 		87DAEABB2072641A00D1BF38 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DAEABA2072641A00D1BF38 /* WelcomeViewController.swift */; };
 		87DAEABE2072641A00D1BF38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87DAEABC2072641A00D1BF38 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		872C2DF920738C9D0049277E /* WelcomeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWireframe.swift; sourceTree = "<group>"; };
 		872C2DFA20738C9D0049277E /* WelcomeWireframeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWireframeProtocol.swift; sourceTree = "<group>"; };
 		872C2DFD20738DC10049277E /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		872C2E0320739C340049277E /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		87DAEAB52072641A00D1BF38 /* SignUp_VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUp_VIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DAEAB82072641A00D1BF38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87DAEABA2072641A00D1BF38 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -64,10 +66,10 @@
 		872C2DE420738AE30049277E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				872C2DE520738AE30049277E /* Home */,
-				872C2DE820738AE30049277E /* Signup */,
 				872C2DEB20738AE30049277E /* Welcome */,
 				872C2DED20738AE30049277E /* Login */,
+				872C2DE520738AE30049277E /* Home */,
+				872C2DE820738AE30049277E /* Signup */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -164,8 +166,8 @@
 		872C2DF020738AF20049277E /* Routing */ = {
 			isa = PBXGroup;
 			children = (
-				872C2DF920738C9D0049277E /* WelcomeWireframe.swift */,
 				872C2DFA20738C9D0049277E /* WelcomeWireframeProtocol.swift */,
+				872C2DF920738C9D0049277E /* WelcomeWireframe.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				872C2DB8207268EE0049277E /* UIButton + Layer.swift */,
+				872C2E0320739C340049277E /* NibLoadable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				872C2DC52072776F0049277E /* UIStoryboard.swift in Sources */,
+				872C2E0420739C340049277E /* NibLoadable.swift in Sources */,
 				872C2DBB207269940049277E /* LoginViewController.swift in Sources */,
 				872C2DBD207269A70049277E /* SignupViewController.swift in Sources */,
 				872C2DC32072708F0049277E /* UserDataManager.swift in Sources */,

@@ -8,17 +8,11 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, NibLoadable {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
-    static var nibInstance: WelcomeViewController {
-        get {
-            return WelcomeViewController(nibName: "WelcomeViewController", bundle: nil)
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         

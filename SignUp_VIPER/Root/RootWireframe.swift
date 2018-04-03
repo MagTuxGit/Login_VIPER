@@ -10,15 +10,25 @@ import UIKit
 
 class RootWireframe {
     
-    var window: UIWindow
-    var navigationVC: UINavigationController
-    var welcomeWireframe: WelcomeWireframe
+    var navigationController = UINavigationController()
+    var welcomeWireframe = WelcomeWireframe()
     
-    init(window: UIWindow) {
-        self.window = window
-        self.navigationVC = UINavigationController()
+    func installRootViewControllerIntoWindow(_ window: UIWindow) {
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
         
-        self.welcomeWireframe = WelcomeWireframe(window: self.window, navigationVC: self.navigationVC)
-        self.welcomeWireframe.presentWelcomeViewControllerInWindow()
+        self.welcomeWireframe.rootWireframe = self
+        self.welcomeWireframe.presentWelcomeScreenInWindow(window)
     }
+    
+    func showRootViewController(_ viewController: UIViewController, inWindow: UIWindow) {
+        let navigationController = navigationControllerFromWindow(inWindow)
+        navigationController.viewControllers = [viewController]
+    }
+    
+    func navigationControllerFromWindow(_ window: UIWindow) -> UINavigationController {
+        let navigationController = window.rootViewController as! UINavigationController
+        return navigationController
+    }
+
 }

@@ -12,10 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var rootWireframe: RootWireframe?
+    var rootWireframe = RootWireframe()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.rootWireframe = RootWireframe(window: self.window!)
+        self.rootWireframe.installRootViewControllerIntoWindow(window!)
         return true
     }
 
