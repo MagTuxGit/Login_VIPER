@@ -13,6 +13,12 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
+    static var storyboardInstance: WelcomeViewController {
+        get {
+            return UIStoryboard.main.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
