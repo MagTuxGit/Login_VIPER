@@ -53,6 +53,162 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		872C2DE420738AE30049277E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				872C2DE520738AE30049277E /* Home */,
+				872C2DE820738AE30049277E /* Signup */,
+				872C2DEB20738AE30049277E /* Welcome */,
+				872C2DED20738AE30049277E /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		872C2DE520738AE30049277E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				872C2DF120738AF80049277E /* View */,
+				872C2DE620738AE30049277E /* Routing */,
+				872C2DE720738AE30049277E /* Business Logic */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		872C2DE620738AE30049277E /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		872C2DE720738AE30049277E /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		872C2DE820738AE30049277E /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				872C2DF220738AFE0049277E /* View */,
+				872C2DE920738AE30049277E /* Routing */,
+				872C2DEA20738AE30049277E /* Business Logic */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		872C2DE920738AE30049277E /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		872C2DEA20738AE30049277E /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		872C2DEB20738AE30049277E /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				872C2DF320738B010049277E /* View */,
+				872C2DF020738AF20049277E /* Routing */,
+				872C2DEC20738AE30049277E /* Business Logic */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		872C2DEC20738AE30049277E /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		872C2DED20738AE30049277E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				872C2DF420738B040049277E /* View */,
+				872C2DEE20738AE30049277E /* Routing */,
+				872C2DEF20738AE30049277E /* Business Logic */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		872C2DEE20738AE30049277E /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		872C2DEF20738AE30049277E /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		872C2DF020738AF20049277E /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		872C2DF120738AF80049277E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				872C2DB62072689B0049277E /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		872C2DF220738AFE0049277E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				872C2DBC207269A70049277E /* SignupViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		872C2DF320738B010049277E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87DAEABA2072641A00D1BF38 /* WelcomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		872C2DF420738B040049277E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				872C2DBA207269940049277E /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		872C2DF520738B0B0049277E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				87DAEAC42072641A00D1BF38 /* LaunchScreen.storyboard */,
+				87DAEAB82072641A00D1BF38 /* AppDelegate.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		872C2DF620738B1E0049277E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				87DAEACD2072642100D1BF38 /* View */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		87DAEAAC2072641A00D1BF38 = {
 			isa = PBXGroup;
 			children = (
@@ -72,32 +228,28 @@
 		87DAEAB72072641A00D1BF38 /* SignUp_VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				87DAEAB82072641A00D1BF38 /* AppDelegate.swift */,
+				872C2DF520738B0B0049277E /* Root */,
+				872C2DE420738AE30049277E /* Modules */,
 				87DAEACE2072642D00D1BF38 /* Storyboards */,
-				87DAEACD2072642100D1BF38 /* View Controller */,
 				87DAEAD02072643D00D1BF38 /* Model */,
+				872C2DF620738B1E0049277E /* Helpers */,
 				87DAEACF2072643500D1BF38 /* Supporting Files */,
 			);
 			path = SignUp_VIPER;
 			sourceTree = "<group>";
 		};
-		87DAEACD2072642100D1BF38 /* View Controller */ = {
+		87DAEACD2072642100D1BF38 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				87DAEABA2072641A00D1BF38 /* WelcomeViewController.swift */,
-				872C2DBA207269940049277E /* LoginViewController.swift */,
-				872C2DBC207269A70049277E /* SignupViewController.swift */,
-				872C2DB62072689B0049277E /* HomeViewController.swift */,
 				872C2DB8207268EE0049277E /* UIButton + Layer.swift */,
 			);
-			path = "View Controller";
+			path = View;
 			sourceTree = "<group>";
 		};
 		87DAEACE2072642D00D1BF38 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				87DAEABC2072641A00D1BF38 /* Main.storyboard */,
-				87DAEAC42072641A00D1BF38 /* LaunchScreen.storyboard */,
 				872C2DC42072776F0049277E /* UIStoryboard.swift */,
 			);
 			path = Storyboards;
