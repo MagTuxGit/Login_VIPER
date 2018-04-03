@@ -18,6 +18,7 @@
 		872C2DF820738C1A0049277E /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C2DF720738C1A0049277E /* RootWireframe.swift */; };
 		872C2DFB20738C9D0049277E /* WelcomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C2DF920738C9D0049277E /* WelcomeWireframe.swift */; };
 		872C2DFC20738C9D0049277E /* WelcomeWireframeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C2DFA20738C9D0049277E /* WelcomeWireframeProtocol.swift */; };
+		872C2DFE20738DC10049277E /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 872C2DFD20738DC10049277E /* WelcomeViewController.xib */; };
 		87DAEAB92072641A00D1BF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DAEAB82072641A00D1BF38 /* AppDelegate.swift */; };
 		87DAEABB2072641A00D1BF38 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DAEABA2072641A00D1BF38 /* WelcomeViewController.swift */; };
 		87DAEABE2072641A00D1BF38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87DAEABC2072641A00D1BF38 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		872C2DF720738C1A0049277E /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		872C2DF920738C9D0049277E /* WelcomeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWireframe.swift; sourceTree = "<group>"; };
 		872C2DFA20738C9D0049277E /* WelcomeWireframeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWireframeProtocol.swift; sourceTree = "<group>"; };
+		872C2DFD20738DC10049277E /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		87DAEAB52072641A00D1BF38 /* SignUp_VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUp_VIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DAEAB82072641A00D1BF38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87DAEABA2072641A00D1BF38 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		872C2DF320738B010049277E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				872C2DFD20738DC10049277E /* WelcomeViewController.xib */,
 				87DAEABA2072641A00D1BF38 /* WelcomeViewController.swift */,
 			);
 			path = View;
@@ -344,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87DAEAC62072641A00D1BF38 /* LaunchScreen.storyboard in Resources */,
+				872C2DFE20738DC10049277E /* WelcomeViewController.xib in Resources */,
 				87DAEAC32072641A00D1BF38 /* Assets.xcassets in Resources */,
 				87DAEABE2072641A00D1BF38 /* Main.storyboard in Resources */,
 			);

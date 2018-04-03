@@ -13,9 +13,9 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
-    static var storyboardInstance: WelcomeViewController {
+    static var nibInstance: WelcomeViewController {
         get {
-            return UIStoryboard.main.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+            return WelcomeViewController(nibName: "WelcomeViewController", bundle: nil)
         }
     }
 

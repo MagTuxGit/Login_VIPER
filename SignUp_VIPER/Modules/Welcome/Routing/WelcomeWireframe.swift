@@ -19,7 +19,7 @@ class WelcomeWireframe: WelcomeWireframeProtocol {
     }
     
     func presentWelcomeViewControllerInWindow() {
-        let welcomeVC = WelcomeViewController.storyboardInstance
+        let welcomeVC = WelcomeViewController.nibInstance
         self.navigationVC.viewControllers = [welcomeVC]
         self.window.rootViewController = navigationVC
         self.window.makeKeyAndVisible()
