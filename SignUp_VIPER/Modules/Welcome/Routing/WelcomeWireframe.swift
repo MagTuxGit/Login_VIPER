@@ -15,7 +15,7 @@ class WelcomeWireframe: WelcomeWireframeProtocol {
     var loginWireframe: LoginWireframe?
     weak var welcomeViewController: WelcomeViewController?
 
-    func presentWelcomeScreenInWindow(_ window: UIWindow) {
+    func presentWelcomeScreen() {
         let welcomeVC = self.welcomeViewController ?? WelcomeViewController.nibInstance
         self.welcomeViewController = welcomeVC
         welcomeVC.welcomeWireframe = self

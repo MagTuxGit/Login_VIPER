@@ -11,27 +11,13 @@ import UIKit
 class RootWireframe {
     
     var navigationController = UINavigationController()
+    var welcomeWireframe: WelcomeWireframe?
     
-    var welcomeWireframe = WelcomeWireframe()
-    var signupWireframe = SignupWireframe()
-    var loginWireframe = LoginWireframe()
-    var homeWireframe = HomeWireframe()
-
     func installRootViewControllerIntoWindow(_ window: UIWindow) {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
-        self.welcomeWireframe.rootWireframe = self
-        self.signupWireframe.rootWireframe = self
-        self.loginWireframe.rootWireframe = self
-        self.homeWireframe.rootWireframe = self
-        
-        self.welcomeWireframe.signupWireframe = signupWireframe
-        self.welcomeWireframe.loginWireframe = loginWireframe
-        self.signupWireframe.homeWireframe = homeWireframe
-        self.loginWireframe.homeWireframe = homeWireframe
-        
-        self.welcomeWireframe.presentWelcomeScreenInWindow(window)
+        self.welcomeWireframe?.presentWelcomeScreen()
     }
     
     func showRootViewController(_ viewController: UIViewController) {

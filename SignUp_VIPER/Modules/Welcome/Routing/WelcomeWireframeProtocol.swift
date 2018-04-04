@@ -9,7 +9,7 @@
 import UIKit
 
 protocol WelcomeWireframeProtocol {
-    func presentWelcomeScreenInWindow(_ window: UIWindow)
+    func presentWelcomeScreen()
     func presentLoginScreen()
     func presentSignupScreen()
 }
