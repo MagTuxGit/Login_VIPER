@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  ManagedUser.swift
 //  SignUp_VIPER
 //
 //  Created by Andriy Trubchanin on 4/4/18.

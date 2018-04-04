@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserDTO.swift
 //  SignUp_VIPER
 //
 //  Created by Andriy Trubchanin on 4/2/18.
