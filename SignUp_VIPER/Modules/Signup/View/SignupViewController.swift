@@ -11,6 +11,7 @@ import UIKit
 class SignupViewController: UIViewController, NibLoadable {
     
     var signupWireframe: SignupWireframe?
+    var signupInteractor = SignupInteractor()
     
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
@@ -26,23 +27,18 @@ class SignupViewController: UIViewController, NibLoadable {
     }
     
     @IBAction func signupTouched(_ sender: UIButton) {
-        guard let userName = nameTextField.text, !userName.isEmpty,
-        let userEmail = emailTextField.text, !userEmail.isEmpty,
-            let userPassword = passwordTextField.text, !userPassword.isEmpty
-        else {
-            dismissTouched()
-            return
+        self.signupInteractor.signup(
+            name: nameTextField.text,
+            email: emailTextField.text,
+            password: passwordTextField.text)
+        { (result) in
+            switch result {
+            case let .success(user):
+                self.signupWireframe?.presentHomeScreen(user: user)
+            case let .failure(message):
+                self.showAlert(title: "User Error", message: message)
+            }
         }
-        
-        if let _ = DataManager.shared.user.getUser(email: userEmail) {
-            self.showAlert(title: "User Error", message: "User with email \(userEmail) already exists")
-            return
-        }
-        
-        let userInfo = UserDTO(name: userName, email: userEmail, password: userPassword)
-        let user = DataManager.shared.user.createUser(userInfo)
-        
-        self.signupWireframe?.presentHomeScreen(user: user)
     }
     
     @IBAction func dismissTouched(_ sender: UIButton? = nil) {

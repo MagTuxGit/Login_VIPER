@@ -25,7 +25,7 @@ class SignupWireframe: SignupWireframeProtocol {
         self.rootWireframe?.removeFromNavigationStackViewController(signupViewController)
     }
 
-    func presentHomeScreen(user: User) {
+    func presentHomeScreen(user: UserDTO) {
         self.homeWireframe?.presentHomeScreen(user: user)
         self.dismissSignupScreen()
     }

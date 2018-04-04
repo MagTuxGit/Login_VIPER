@@ -24,7 +24,7 @@ class LoginWireframe: LoginWireframeProtocol {
         self.rootWireframe?.removeFromNavigationStackViewController(loginViewController)
     }
     
-    func presentHomeScreen(user: User) {
+    func presentHomeScreen(user: UserDTO) {
         self.homeWireframe?.presentHomeScreen(user: user)
         self.dismissLoginScreen()   // removes VC from the stack
     }

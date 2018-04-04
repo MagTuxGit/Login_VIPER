@@ -11,6 +11,6 @@ import UIKit
 protocol SignupWireframeProtocol {
     func presentSignupScreen()
     func dismissSignupScreen()
-    func presentHomeScreen(user: User)
+    func presentHomeScreen(user: UserDTO)
 }
 

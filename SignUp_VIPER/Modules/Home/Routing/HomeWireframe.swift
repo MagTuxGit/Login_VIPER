@@ -11,7 +11,7 @@ class HomeWireframe: HomeWireframeProtocol {
     var rootWireframe: RootWireframe?
     weak var homeViewController: HomeViewController?
     
-    func presentHomeScreen(user: User) {
+    func presentHomeScreen(user: UserDTO) {
         let homeVC = self.homeViewController ?? HomeViewController.nibInstance
         self.homeViewController = homeVC
         homeVC.homeWireframe = self

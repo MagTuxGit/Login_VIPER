@@ -11,12 +11,13 @@ import UIKit
 class HomeViewController: UIViewController, NibLoadable {
     
     var homeWireframe: HomeWireframe?
+    var homeInteractor = HomeInteractor()
     
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
-    var currentUser: User!
+    var currentUser: UserDTO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class HomeViewController: UIViewController, NibLoadable {
     }
     
     @IBAction func deleteTouched(_ sender: UIButton) {
-        DataManager.shared.user.deleteUser(currentUser)
+        self.homeInteractor.deleteUser(currentUser)
         self.homeWireframe?.dismissHomeScreen()
     }
 }

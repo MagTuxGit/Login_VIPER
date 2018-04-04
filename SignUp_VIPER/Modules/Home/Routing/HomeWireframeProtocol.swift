@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeWireframeProtocol {
-    func presentHomeScreen(user: User)
+    func presentHomeScreen(user: UserDTO)
     func dismissHomeScreen()
 }
 

@@ -12,7 +12,8 @@ import CoreData
 class UserDataManager {
     var dataManager = DataManager.shared
     let context = DataManager.shared.context
-
+    
+    @discardableResult
     func createUser(_ userInfo: UserDTO) -> User {
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
         user.name = userInfo.name
@@ -30,8 +31,8 @@ class UserDataManager {
         return (try? context.fetch(fetchRequest))?.last
     }
     
-    func deleteUser(_ user: User?) {
-        guard let user = user else { return }
+    func deleteUser(_ userInfo: UserDTO) {
+        guard let user = self.getUser(email: userInfo.email) else { return }
         context.delete(user)
         dataManager.saveContext()
     }

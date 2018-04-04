@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController, NibLoadable {
 
     var loginWireframe: LoginWireframe?
+    var loginInteractor = LoginInteractor()
     
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
@@ -25,24 +26,18 @@ class LoginViewController: UIViewController, NibLoadable {
     }
     
     @IBAction func loginTouched(_ sender: UIButton) {
-        guard let userEmail = emailTextField.text, !userEmail.isEmpty,
-            let userPassword = passwordTextField.text, !userPassword.isEmpty
-            else {
-                self.showAlert(title: "User Error", message: "Fill in all the fields")
-                return
-        }
         
-        guard let user = DataManager.shared.user.getUser(email: userEmail) else {
-            self.showAlert(title: "User Error", message: "User with email \(userEmail) doesn't exist")
-            return
+        self.loginInteractor.login(
+            email: emailTextField.text,
+            password: passwordTextField.text)
+        { (result) in
+            switch result {
+            case let .success(user):
+                self.loginWireframe?.presentHomeScreen(user: user)
+            case let .failure(message):
+                self.showAlert(title: "User Error", message: message)
+            }
         }
-        
-        guard user.password == userPassword else {
-            self.showAlert(title: "User Error", message: "Password is incorrect")
-            return
-        }
-        
-        self.loginWireframe?.presentHomeScreen(user: user)
     }
     
     @IBAction func dismissTouched(_ sender: UIButton? = nil) {

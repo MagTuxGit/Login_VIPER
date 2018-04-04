@@ -11,5 +11,5 @@ import UIKit
 protocol LoginWireframeProtocol {
     func presentLoginScreen()
     func dismissLoginScreen()
-    func presentHomeScreen(user: User)
+    func presentHomeScreen(user: UserDTO)
 }
