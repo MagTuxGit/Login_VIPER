@@ -8,19 +8,15 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, NibLoadable {
 
+    var loginWireframe: LoginWireframe?
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var dismissButton: UIButton!
     
-    static var storyboardInstance: LoginViewController {
-        get {
-            return UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,33 +28,25 @@ class LoginViewController: UIViewController {
         guard let userEmail = emailTextField.text, !userEmail.isEmpty,
             let userPassword = passwordTextField.text, !userPassword.isEmpty
             else {
-                dismissTouched()
+                self.showAlert(title: "User Error", message: "Fill in all the fields")
                 return
         }
         
         guard let user = DataManager.shared.user.getUser(email: userEmail) else {
-            let alertController = UIAlertController(title: "User Error", message: "User with email \(userEmail) doesn't exist", preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "OK", style: .default)
-            alertController.addAction(OKAction)
-            self.present(alertController, animated: true)
+            self.showAlert(title: "User Error", message: "User with email \(userEmail) doesn't exist")
             return
         }
         
         guard user.password == userPassword else {
-            let alertController = UIAlertController(title: "User Error", message: "Password is incorrect", preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "OK", style: .default)
-            alertController.addAction(OKAction)
-            self.present(alertController, animated: true)
+            self.showAlert(title: "User Error", message: "Password is incorrect")
             return
         }
         
-        let homeVC = HomeViewController.storyboardInstance
-        homeVC.currentUser = user
-        navigationController?.pushViewController(homeVC, animated: true)
+        self.loginWireframe?.presentHomeScreen(user: user)
     }
     
     @IBAction func dismissTouched(_ sender: UIButton? = nil) {
-        navigationController?.popViewController(animated: true)
+        self.loginWireframe?.dismissLoginScreen()
     }
     
     

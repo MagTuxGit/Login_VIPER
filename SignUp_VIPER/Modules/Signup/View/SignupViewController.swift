@@ -8,20 +8,16 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
-
+class SignupViewController: UIViewController, NibLoadable {
+    
+    var signupWireframe: SignupWireframe?
+    
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var dismissButton: UIButton!
     
-    static var storyboardInstance: SignupViewController {
-        get {
-            return UIStoryboard.main.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,26 +35,18 @@ class SignupViewController: UIViewController {
         }
         
         if let _ = DataManager.shared.user.getUser(email: userEmail) {
-            let alertController = UIAlertController(title: "User Error", message: "User with email \(userEmail) already exists", preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "OK", style: .default)
-            alertController.addAction(OKAction)
-            self.present(alertController, animated: true)
+            self.showAlert(title: "User Error", message: "User with email \(userEmail) already exists")
             return
         }
         
         let userInfo = UserDTO(name: userName, email: userEmail, password: userPassword)
         let user = DataManager.shared.user.createUser(userInfo)
-        let homeVC = HomeViewController.storyboardInstance
-        homeVC.currentUser = user
-
-        var navigationArray = self.navigationController!.viewControllers
-        navigationArray.removeLast()
-        navigationArray.append(homeVC)
-        navigationController?.setViewControllers(navigationArray, animated: true)
+        
+        self.signupWireframe?.presentHomeScreen(user: user)
     }
     
     @IBAction func dismissTouched(_ sender: UIButton? = nil) {
-        navigationController?.popViewController(animated: true)
+        self.signupWireframe?.dismissSignupScreen()
     }
     
 }

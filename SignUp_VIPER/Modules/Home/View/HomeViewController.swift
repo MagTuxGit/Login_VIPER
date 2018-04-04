@@ -8,20 +8,16 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, NibLoadable {
+    
+    var homeWireframe: HomeWireframe?
+    
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
     var currentUser: User!
     
-    static var storyboardInstance: HomeViewController {
-        get {
-            return UIStoryboard.main.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,11 +28,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func logoutTouched(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        self.homeWireframe?.dismissHomeScreen()
     }
     
     @IBAction func deleteTouched(_ sender: UIButton) {
         DataManager.shared.user.deleteUser(currentUser)
-        navigationController?.popViewController(animated: true)
+        self.homeWireframe?.dismissHomeScreen()
     }
 }

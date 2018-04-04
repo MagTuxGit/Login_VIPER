@@ -9,7 +9,9 @@
 import UIKit
 
 class WelcomeViewController: UIViewController, NibLoadable {
-
+    
+    var welcomeWireframe: WelcomeWireframe?
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -21,13 +23,11 @@ class WelcomeViewController: UIViewController, NibLoadable {
     }
     
     @IBAction func loginTouched(_ sender: UIButton) {
-        let loginVC = LoginViewController.storyboardInstance
-        navigationController?.pushViewController(loginVC, animated: true)
+        self.welcomeWireframe?.presentLoginScreen()
     }
     
     @IBAction func signupTouched(_ sender: UIButton) {
-        let signupVC = SignupViewController.storyboardInstance
-        navigationController?.pushViewController(signupVC, animated: true)
+        self.welcomeWireframe?.presentSignupScreen()
     }
 
 }
