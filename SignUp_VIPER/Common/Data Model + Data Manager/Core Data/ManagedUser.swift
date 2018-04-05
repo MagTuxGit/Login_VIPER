@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 extension User {
     var userDTO: UserDTO {
@@ -14,4 +15,9 @@ extension User {
             return UserDTO(name: self.name ?? "", email: self.email ?? "", password: self.password ?? "")
         }
     }
+    
+    static func insertNewObject(into context: NSManagedObjectContext) -> User {
+        return NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
+    }
+
 }

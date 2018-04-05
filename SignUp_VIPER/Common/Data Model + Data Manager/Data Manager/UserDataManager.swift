@@ -15,7 +15,8 @@ class UserDataManager {
     
     @discardableResult
     func createUser(_ userInfo: UserDTO) -> User {
-        let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
+        //let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
+        let user = User.insertNewObject(into: context)
         user.name = userInfo.name
         user.email = userInfo.email
         user.password = userInfo.password
